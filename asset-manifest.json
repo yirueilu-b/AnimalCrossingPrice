@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/AnimalCrossingPrice/static/css/main.5f361e03.chunk.css",
+    "main.js": "/AnimalCrossingPrice/static/js/main.c1446c18.chunk.js",
+    "main.js.map": "/AnimalCrossingPrice/static/js/main.c1446c18.chunk.js.map",
+    "runtime-main.js": "/AnimalCrossingPrice/static/js/runtime-main.eb3cde15.js",
+    "runtime-main.js.map": "/AnimalCrossingPrice/static/js/runtime-main.eb3cde15.js.map",
+    "static/js/2.af493831.chunk.js": "/AnimalCrossingPrice/static/js/2.af493831.chunk.js",
+    "static/js/2.af493831.chunk.js.map": "/AnimalCrossingPrice/static/js/2.af493831.chunk.js.map",
+    "index.html": "/AnimalCrossingPrice/index.html",
+    "precache-manifest.a1697cd4ab81037e8c3fb447652b4a96.js": "/AnimalCrossingPrice/precache-manifest.a1697cd4ab81037e8c3fb447652b4a96.js",
+    "service-worker.js": "/AnimalCrossingPrice/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/AnimalCrossingPrice/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.af493831.chunk.js.LICENSE.txt": "/AnimalCrossingPrice/static/js/2.af493831.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/AnimalCrossingPrice/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eb3cde15.js",
+    "static/js/2.af493831.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.c1446c18.chunk.js"
+  ]
+}
