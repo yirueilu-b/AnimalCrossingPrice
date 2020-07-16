@@ -13,7 +13,6 @@ function App() {
         }
     });
     const toggleDarkTheme = () => {
-        console.log("pressed");
         let newPaletteType = theme.palette.type === "light" ? "dark" : "light";
         setTheme({
             palette: {
@@ -27,7 +26,6 @@ function App() {
         <MuiThemeProvider theme={muiTheme}>
             <CssBaseline/>
             <Navbar theme={theme.palette.type} onToggleDark={toggleDarkTheme}/>
-            {/*<Demo onToggleDark={toggleDarkTheme}/>*/}
         </MuiThemeProvider>
     );
 }

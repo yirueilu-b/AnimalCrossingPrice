@@ -51,7 +51,6 @@ function ScrollTop(props) {
 // };
 
 function BackToTop(props) {
-    console.log(props.theme)
     return (
         <React.Fragment>
             <CssBaseline/>
