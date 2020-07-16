@@ -9,13 +9,22 @@ import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
+import {makeStyles} from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        position: 'fixed',
+        bottom: theme.spacing(2),
+        right: theme.spacing(2),
+    },
+}));
 
 function ScrollTop(props) {
     const {children, window} = props;
-    // Note that you normally won't need to set the window ref as useScrollTrigger
+    const classes = useStyles();
+// Note that you normally won't need to set the window ref as useScrollTrigger
     // will default to window.
     // This is only being set here because the demo is in an iframe.
     const trigger = useScrollTrigger({
@@ -34,7 +43,7 @@ function ScrollTop(props) {
 
     return (
         <Zoom in={trigger}>
-            <div onClick={handleClick} role="presentation">
+            <div onClick={handleClick} role="presentation" className={classes.root}>
                 {children}
             </div>
         </Zoom>

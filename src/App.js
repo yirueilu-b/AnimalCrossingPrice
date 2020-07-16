@@ -2,9 +2,31 @@ import React from 'react';
 import './Component/Table'
 import Navbar from "./Component/Navbar"
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container'
 import {useState} from 'react';
 import {MuiThemeProvider, createMuiTheme} from "@material-ui/core/styles";
-// import Demo from './Component/demo'
+import {makeStyles} from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Option from './Component/Option'
+
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+        maxWidth: '100vw',
+        marginTop: theme.spacing(2),
+        textAlign: 'center',
+    },
+    paper: {
+        height:'100%',
+        padding: theme.spacing(2),
+        textAlign: 'center',
+    },
+    table:{
+        minHeight: '100vh'
+    }
+}));
 
 function App() {
     const [theme, setTheme] = useState({
@@ -21,11 +43,24 @@ function App() {
         });
     };
     const muiTheme = createMuiTheme(theme);
+    const classes = useStyles();
 
     return (
         <MuiThemeProvider theme={muiTheme}>
             <CssBaseline/>
+
             <Navbar theme={theme.palette.type} onToggleDark={toggleDarkTheme}/>
+
+            <Container className={classes.root}>
+
+                <Option/>
+
+                <Grid container spacing={2}>
+                    <Grid item xs={12} className={classes.table}>
+                        <Paper className={classes.paper}>xs=12</Paper>
+                    </Grid>
+                </Grid>
+            </Container>
         </MuiThemeProvider>
     );
 }
