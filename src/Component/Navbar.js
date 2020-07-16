@@ -60,7 +60,7 @@ function BackToTop(props) {
                     <IconButton edge="start" color="default" aria-label="menu" onClick={props.onToggleDark}>
                         {props.theme === "light" ? <Brightness7Icon/> : <Brightness4Icon/>}
                     </IconButton>
-                    <Typography variant="h6">Animal Crossing Price list</Typography>
+                    <Typography variant="h6">Animal Crossing Price List</Typography>
                 </Toolbar>
             </AppBar>
             <Toolbar id="back-to-top-anchor"/>
