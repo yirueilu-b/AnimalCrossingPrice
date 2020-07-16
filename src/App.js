@@ -7,9 +7,8 @@ import {useState} from 'react';
 import {MuiThemeProvider, createMuiTheme} from "@material-ui/core/styles";
 import {makeStyles} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import Option from './Component/Option'
-
+import DataTable from './Component/Table'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,13 +18,11 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
     },
     paper: {
-        height:'100%',
+        height: '100%',
         padding: theme.spacing(2),
         textAlign: 'center',
     },
-    table:{
-        minHeight: '100vh'
-    }
+    table: {}
 }));
 
 function App() {
@@ -52,12 +49,10 @@ function App() {
             <Navbar theme={theme.palette.type} onToggleDark={toggleDarkTheme}/>
 
             <Container className={classes.root}>
-
                 <Option/>
-
                 <Grid container spacing={2}>
                     <Grid item xs={12} className={classes.table}>
-                        <Paper className={classes.paper}>xs=12</Paper>
+                        <DataTable/>
                     </Grid>
                 </Grid>
             </Container>

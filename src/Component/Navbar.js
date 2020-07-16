@@ -13,6 +13,8 @@ import Brightness7Icon from '@material-ui/icons/Brightness7';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import {makeStyles} from '@material-ui/core/styles';
 
+const Title = "動物森友會魚類蟲類查價";
+
 const useStyles = makeStyles((theme) => ({
     root: {
         position: 'fixed',
@@ -68,7 +70,7 @@ function BackToTop(props) {
                     <IconButton edge="start" color="default" aria-label="menu" onClick={props.onToggleDark}>
                         {props.theme === "light" ? <Brightness7Icon/> : <Brightness4Icon/>}
                     </IconButton>
-                    <Typography variant="h6">Animal Crossing Price List</Typography>
+                    <Typography variant="h6">{Title}</Typography>
                 </Toolbar>
             </AppBar>
             <Toolbar id="back-to-top-anchor"/>
