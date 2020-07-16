@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/AnimalCrossingPrice/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/AnimalCrossingPrice/static/js/main.4c74ef5e.chunk.js",
-    "main.js.map": "/AnimalCrossingPrice/static/js/main.4c74ef5e.chunk.js.map",
+    "main.js": "/AnimalCrossingPrice/static/js/main.25212381.chunk.js",
+    "main.js.map": "/AnimalCrossingPrice/static/js/main.25212381.chunk.js.map",
     "runtime-main.js": "/AnimalCrossingPrice/static/js/runtime-main.eb3cde15.js",
     "runtime-main.js.map": "/AnimalCrossingPrice/static/js/runtime-main.eb3cde15.js.map",
-    "static/js/2.d06a8a44.chunk.js": "/AnimalCrossingPrice/static/js/2.d06a8a44.chunk.js",
-    "static/js/2.d06a8a44.chunk.js.map": "/AnimalCrossingPrice/static/js/2.d06a8a44.chunk.js.map",
+    "static/js/2.ae7a21d6.chunk.js": "/AnimalCrossingPrice/static/js/2.ae7a21d6.chunk.js",
+    "static/js/2.ae7a21d6.chunk.js.map": "/AnimalCrossingPrice/static/js/2.ae7a21d6.chunk.js.map",
     "index.html": "/AnimalCrossingPrice/index.html",
-    "precache-manifest.6d502452fe968b511041045ede2a01c8.js": "/AnimalCrossingPrice/precache-manifest.6d502452fe968b511041045ede2a01c8.js",
+    "precache-manifest.5b2dde60ee986aeab08b544918360276.js": "/AnimalCrossingPrice/precache-manifest.5b2dde60ee986aeab08b544918360276.js",
     "service-worker.js": "/AnimalCrossingPrice/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/AnimalCrossingPrice/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.d06a8a44.chunk.js.LICENSE.txt": "/AnimalCrossingPrice/static/js/2.d06a8a44.chunk.js.LICENSE.txt"
+    "static/js/2.ae7a21d6.chunk.js.LICENSE.txt": "/AnimalCrossingPrice/static/js/2.ae7a21d6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.eb3cde15.js",
-    "static/js/2.d06a8a44.chunk.js",
+    "static/js/2.ae7a21d6.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.4c74ef5e.chunk.js"
+    "static/js/main.25212381.chunk.js"
   ]
 }
