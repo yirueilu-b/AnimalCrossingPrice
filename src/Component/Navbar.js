@@ -1,15 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import {makeStyles} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
-
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
 
 function ScrollTop(props) {
     const {children, window} = props;
@@ -39,21 +41,25 @@ function ScrollTop(props) {
     );
 }
 
-ScrollTop.propTypes = {
-    children: PropTypes.element.isRequired,
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
-    window: PropTypes.func,
-};
+// ScrollTop.propTypes = {
+//     children: PropTypes.element.isRequired,
+//     /**
+//      * Injected by the documentation to work in an iframe.
+//      * You won't need it on your project.
+//      */
+//     window: PropTypes.func,
+// };
 
-export default function BackToTop(props) {
+function BackToTop(props) {
+    console.log(props.theme)
     return (
         <React.Fragment>
             <CssBaseline/>
-            <AppBar>
+            <AppBar color="default">
                 <Toolbar>
+                    <IconButton edge="start" color="default" aria-label="menu" onClick={props.onToggleDark}>
+                        {props.theme === "light" ? <Brightness7Icon/> : <Brightness4Icon/>}
+                    </IconButton>
                     <Typography variant="h6">Animal Crossing Price list</Typography>
                 </Toolbar>
             </AppBar>
@@ -66,3 +72,5 @@ export default function BackToTop(props) {
         </React.Fragment>
     );
 }
+
+export default BackToTop
