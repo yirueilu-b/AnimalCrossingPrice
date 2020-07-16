@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/AnimalCrossingPrice/precache-manifest.5b2dde60ee986aeab08b544918360276.js"
+  "/AnimalCrossingPrice/precache-manifest.7be40380df8c970a0e1e5e326491ebc7.js"
 );
 
 self.addEventListener('message', (event) => {

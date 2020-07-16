@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/AnimalCrossingPrice/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/AnimalCrossingPrice/static/js/main.25212381.chunk.js",
-    "main.js.map": "/AnimalCrossingPrice/static/js/main.25212381.chunk.js.map",
+    "main.js": "/AnimalCrossingPrice/static/js/main.f6395e0c.chunk.js",
+    "main.js.map": "/AnimalCrossingPrice/static/js/main.f6395e0c.chunk.js.map",
     "runtime-main.js": "/AnimalCrossingPrice/static/js/runtime-main.eb3cde15.js",
     "runtime-main.js.map": "/AnimalCrossingPrice/static/js/runtime-main.eb3cde15.js.map",
     "static/js/2.ae7a21d6.chunk.js": "/AnimalCrossingPrice/static/js/2.ae7a21d6.chunk.js",
     "static/js/2.ae7a21d6.chunk.js.map": "/AnimalCrossingPrice/static/js/2.ae7a21d6.chunk.js.map",
     "index.html": "/AnimalCrossingPrice/index.html",
-    "precache-manifest.5b2dde60ee986aeab08b544918360276.js": "/AnimalCrossingPrice/precache-manifest.5b2dde60ee986aeab08b544918360276.js",
+    "precache-manifest.7be40380df8c970a0e1e5e326491ebc7.js": "/AnimalCrossingPrice/precache-manifest.7be40380df8c970a0e1e5e326491ebc7.js",
     "service-worker.js": "/AnimalCrossingPrice/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/AnimalCrossingPrice/static/css/main.5ecd60fb.chunk.css.map",
     "static/js/2.ae7a21d6.chunk.js.LICENSE.txt": "/AnimalCrossingPrice/static/js/2.ae7a21d6.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.eb3cde15.js",
     "static/js/2.ae7a21d6.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.25212381.chunk.js"
+    "static/js/main.f6395e0c.chunk.js"
   ]
 }
