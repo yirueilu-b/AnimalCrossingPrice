@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/AnimalCrossingPrice/static/css/main.a573b9a7.chunk.css",
-    "main.js": "/AnimalCrossingPrice/static/js/main.e843d2f6.chunk.js",
-    "main.js.map": "/AnimalCrossingPrice/static/js/main.e843d2f6.chunk.js.map",
+    "main.css": "/AnimalCrossingPrice/static/css/main.b2155621.chunk.css",
+    "main.js": "/AnimalCrossingPrice/static/js/main.68721a67.chunk.js",
+    "main.js.map": "/AnimalCrossingPrice/static/js/main.68721a67.chunk.js.map",
     "runtime-main.js": "/AnimalCrossingPrice/static/js/runtime-main.eb3cde15.js",
     "runtime-main.js.map": "/AnimalCrossingPrice/static/js/runtime-main.eb3cde15.js.map",
-    "static/js/2.770e7e49.chunk.js": "/AnimalCrossingPrice/static/js/2.770e7e49.chunk.js",
-    "static/js/2.770e7e49.chunk.js.map": "/AnimalCrossingPrice/static/js/2.770e7e49.chunk.js.map",
+    "static/js/2.33d07b7b.chunk.js": "/AnimalCrossingPrice/static/js/2.33d07b7b.chunk.js",
+    "static/js/2.33d07b7b.chunk.js.map": "/AnimalCrossingPrice/static/js/2.33d07b7b.chunk.js.map",
     "index.html": "/AnimalCrossingPrice/index.html",
-    "precache-manifest.654c46065111a0d7d3eeebab148d0e43.js": "/AnimalCrossingPrice/precache-manifest.654c46065111a0d7d3eeebab148d0e43.js",
+    "precache-manifest.1c584da5f5056cbfdab9f030604c56d7.js": "/AnimalCrossingPrice/precache-manifest.1c584da5f5056cbfdab9f030604c56d7.js",
     "service-worker.js": "/AnimalCrossingPrice/service-worker.js",
-    "static/css/main.a573b9a7.chunk.css.map": "/AnimalCrossingPrice/static/css/main.a573b9a7.chunk.css.map",
-    "static/js/2.770e7e49.chunk.js.LICENSE.txt": "/AnimalCrossingPrice/static/js/2.770e7e49.chunk.js.LICENSE.txt",
+    "static/css/main.b2155621.chunk.css.map": "/AnimalCrossingPrice/static/css/main.b2155621.chunk.css.map",
+    "static/js/2.33d07b7b.chunk.js.LICENSE.txt": "/AnimalCrossingPrice/static/js/2.33d07b7b.chunk.js.LICENSE.txt",
     "static/media/bg.png": "/AnimalCrossingPrice/static/media/bg.cea8d8de.png"
   },
   "entrypoints": [
     "static/js/runtime-main.eb3cde15.js",
-    "static/js/2.770e7e49.chunk.js",
-    "static/css/main.a573b9a7.chunk.css",
-    "static/js/main.e843d2f6.chunk.js"
+    "static/js/2.33d07b7b.chunk.js",
+    "static/css/main.b2155621.chunk.css",
+    "static/js/main.68721a67.chunk.js"
   ]
 }
