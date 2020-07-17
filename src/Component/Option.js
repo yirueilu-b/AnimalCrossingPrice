@@ -3,12 +3,15 @@ import {makeStyles} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
-import Paper from '@material-ui/core/Paper';
 import SearchIcon from '@material-ui/icons/Search';
-import FormControl from '@material-ui/core/FormControl';
-import NativeSelect from '@material-ui/core/NativeSelect';
+import Image from './bg.png';
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        height: 96,
+        backgroundImage: `url(${Image})`
+        // backgroundColor: 'black'
+    },
     paper: {
         height: 48,
         padding: theme.spacing(2),
@@ -37,20 +40,25 @@ function Option(props) {
     return (
         <React.Fragment>
             <CssBaseline/>
-
-            <Grid container spacing={3}>
-
-                <Grid item xs={12}>
-                    <Grid container spacing={1} alignItems="flex-end">
-                        <Grid item xs={1}>
-                            <SearchIcon/>
-                        </Grid>
-                        <Grid item xs={10}>
-                            <TextField fullWidth id="input-with-icon-grid" label="輸入名稱以查詢"/>
-                        </Grid>
+            <Grid className={classes.root} container spacing={3}
+                  justify='center'
+                  alignItems="center"
+                  direction="row"
+            >
+                <Grid item xs={10} md={10} container spacing={1}
+                      justify='flex-end'
+                      alignItems="flex-end"
+                      direction="row"
+                >
+                    <Grid container item xs={1} md={1}
+                          alignItems="flex-end"
+                          justify='flex-end'>
+                        <SearchIcon/>
+                    </Grid>
+                    <Grid item xs={10} md={11}>
+                        <TextField fullWidth id="input-with-icon-grid" label="輸入名稱以查詢"/>
                     </Grid>
                 </Grid>
-
             </Grid>
         </React.Fragment>
     );

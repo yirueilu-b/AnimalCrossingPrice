@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         maxWidth: '100vw',
+        height: '100%',
         marginTop: theme.spacing(2),
         textAlign: 'center',
     },
@@ -50,8 +51,12 @@ function App() {
 
             <Container className={classes.root}>
                 <Option/>
-                <Grid container spacing={2}>
-                    <Grid item xs={12} className={classes.table}>
+                <Grid container spacing={2}
+                      justify='center'
+                      alignItems="center"
+                      direction="row"
+                >
+                    <Grid item xs={12} md={9} className={classes.table}>
                         <DataTable/>
                     </Grid>
                 </Grid>
