@@ -1,5 +1,11 @@
-**Animal Crossing Simple Price Table**
+# Animal Crossing Simple Price Table
 
-- Update every month.
+- Price list for only current month and would be update every month.
 
-- Price list for only current month.
+- Only contains Northern Hemisphere data
+
+## TODO:
+
+- Make table be able to be sorted by price
+
+- Location and time filter
