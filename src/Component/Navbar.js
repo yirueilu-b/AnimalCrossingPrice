@@ -13,7 +13,7 @@ import Brightness7Icon from '@material-ui/icons/Brightness7';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import {makeStyles} from '@material-ui/core/styles';
 
-const Title = "動物森友會魚類蟲類查價";
+const Title = "動森魚類蟲類快速查價";
 
 const useStyles = makeStyles((theme) => ({
     root: {

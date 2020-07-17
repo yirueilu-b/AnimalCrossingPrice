@@ -8,7 +8,8 @@ import Grid from '@material-ui/core/Grid';
 import Option from './Component/Option'
 import DataTable from './Component/Table'
 import {makeStyles} from '@material-ui/core/styles';
-import importedCsvData from './data/fish.csv';
+import fishData from './data/fish.csv';
+import insectData from './data/insect.csv';
 import Papa from 'papaparse';
 import {withStyles} from '@material-ui/styles';
 
@@ -51,16 +52,24 @@ class App extends React.Component {
     }
 
     async getData() {
-        const response = await fetch(importedCsvData);
-        const reader = response.body.getReader();
-        const result = await reader.read(); // raw array
-        const decoder = new TextDecoder('utf-8');
-        const csv = decoder.decode(result.value);// the csv text
-        const results = Papa.parse(csv, {header: true}); // object with { data, errors, meta }
-        results.data.pop();
-        const rows = results.data;// array of objects
+        let responseInsect = await fetch(insectData);
+        let readerInsect = responseInsect.body.getReader();
+        let resultInsect = await readerInsect.read(); // raw array
+        let decoder = new TextDecoder('utf-8');
+        let csvInsect = decoder.decode(resultInsect.value);// the csv text
+        let resultsInsect = Papa.parse(csvInsect, {header: true}); // object with { data, errors, meta }
+        resultsInsect.data.pop();
+        let rowsInsect = resultsInsect.data;// array of objects
+
+        let responseFish = await fetch(fishData);
+        let readerFish = responseFish.body.getReader();
+        let resultFish = await readerFish.read(); // raw array
+        let csvFish = decoder.decode(resultFish.value);// the csv text
+        let resultsFish = Papa.parse(csvFish, {header: true}); // object with { data, errors, meta }
+        resultsFish.data.pop();
+        const rowsFish = resultsFish.data;// array of objects
         // console.log(rows);
-        this.setState({rows: rows});
+        this.setState({rows: rowsFish.concat(rowsInsect)});
     }
 
 
@@ -70,7 +79,7 @@ class App extends React.Component {
     };
 
     handleFilterNameChange = (e) => {
-        console.log(e.target.value);
+        // console.log(e.target.value);
         this.setState({filterName: e.target.value});
     };
 
@@ -79,7 +88,7 @@ class App extends React.Component {
 
         let myComponent;
         if (this.state.rows.length !== 0) {
-            console.log(this.state.rows);
+            // console.log(this.state.rows);
             myComponent = <Grid container spacing={2}
                                 justify='center'
                                 alignItems="center"
@@ -110,6 +119,7 @@ class App extends React.Component {
                     <Option handleFilterNameChange={this.handleFilterNameChange}/>
                     {myComponent}
                 </Container>
+
             </MuiThemeProvider>
         );
 

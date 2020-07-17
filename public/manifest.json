@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "動森快速查價",
+  "name": "快速查詢動森魚類蟲類之價格",
   "icons": [
     {
       "src": "favicon.ico",

@@ -44,7 +44,7 @@ const StyledTableRow = withStyles((theme) => ({
 
 export default function CustomizedTables(props) {
     const classes = useStyles();
-    console.log('props.data', props.data, props.filterName);
+    // console.log('props.data', props.data, props.filterName);
     return (
         <TableContainer className={classes.tablePaper} component={Paper}>
             <Table className={classes.table} aria-label="customized table">
