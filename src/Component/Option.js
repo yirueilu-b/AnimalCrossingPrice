@@ -4,36 +4,21 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
-import Image from './bg.png';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        marginTop: theme.spacing(2),
         height: 96,
-        backgroundImage: `url(${Image})`
-        // backgroundColor: 'black'
     },
-    paper: {
-        height: 48,
-        padding: theme.spacing(2),
-        textAlign: 'center',
+    textField: {
     },
-    formControl: {
-        margin: theme.spacing(1),
-        width: '100%',
-    },
-    selectEmpty: {
-        marginTop: theme.spacing(1),
+//style for font size
+    resize: {
+        fontSize: 18
     },
 }));
 
-// ScrollTop.propTypes = {
-//     children: PropTypes.element.isRequired,
-//     /**
-//      * Injected by the documentation to work in an iframe.
-//      * You won't need it on your project.
-//      */
-//     window: PropTypes.func,
-// };
 
 function Option(props) {
     const classes = useStyles();
@@ -45,8 +30,8 @@ function Option(props) {
                   alignItems="center"
                   direction="row"
             >
-                <Grid item xs={10} md={10} container spacing={1}
-                      justify='flex-end'
+                <Grid item xs={10} md={8} container spacing={1}
+                      justify='center'
                       alignItems="flex-end"
                       direction="row"
                 >
@@ -55,8 +40,19 @@ function Option(props) {
                           justify='flex-end'>
                         <SearchIcon/>
                     </Grid>
-                    <Grid item xs={10} md={11}>
-                        <TextField fullWidth id="input-with-icon-grid" label="輸入名稱以查詢"/>
+                    <Grid item xs={9} md={7}>
+                        <TextField
+                            onChange={props.handleFilterNameChange}
+                            InputProps={{
+                                classes: {
+                                    input: classes.resize,
+                                },
+                            }}
+                            className={classes.textField}
+                            fullWidth id="input-with-icon-grid"
+                            label="輸入名稱以查詢"
+                            autoFocus={true}
+                        />
                     </Grid>
                 </Grid>
             </Grid>

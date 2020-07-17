@@ -23,7 +23,10 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2),
         textAlign: 'center',
     },
-    table: {}
+    table: {
+        width:'100vw',
+        borderRadius:'10em'
+    }
 }));
 
 function App() {
@@ -32,6 +35,9 @@ function App() {
             type: "light"
         }
     });
+
+    const [filterName, setFilterName] = useState({filterName: ''});
+
     const toggleDarkTheme = () => {
         let newPaletteType = theme.palette.type === "light" ? "dark" : "light";
         setTheme({
@@ -40,6 +46,12 @@ function App() {
             }
         });
     };
+
+    const handleFilterNameChange = (e) => {
+        console.log(e.target.value);
+        setFilterName({filterName: e.target.value});
+    };
+
     const muiTheme = createMuiTheme(theme);
     const classes = useStyles();
 
@@ -50,14 +62,14 @@ function App() {
             <Navbar theme={theme.palette.type} onToggleDark={toggleDarkTheme}/>
 
             <Container className={classes.root}>
-                <Option/>
+                <Option handleFilterNameChange={handleFilterNameChange}/>
                 <Grid container spacing={2}
                       justify='center'
                       alignItems="center"
                       direction="row"
                 >
-                    <Grid item xs={12} md={9} className={classes.table}>
-                        <DataTable/>
+                    <Grid item xs={12} md={7} className={classes.table}>
+                        <DataTable filterName={filterName}/>
                     </Grid>
                 </Grid>
             </Container>
