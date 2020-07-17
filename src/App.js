@@ -3,14 +3,17 @@ import './Component/Table'
 import Navbar from "./Component/Navbar"
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container'
-import {useState} from 'react';
 import {MuiThemeProvider, createMuiTheme} from "@material-ui/core/styles";
-import {makeStyles} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Option from './Component/Option'
 import DataTable from './Component/Table'
+import {makeStyles} from '@material-ui/core/styles';
+import importedCsvData from './data/fish.csv';
+import Papa from 'papaparse';
+import {withStyles} from '@material-ui/styles';
 
-const useStyles = makeStyles((theme) => ({
+
+const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
         maxWidth: '100vw',
@@ -24,58 +27,95 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
     },
     table: {
-        width:'100vw',
-        borderRadius:'10em'
+        width: '100vw',
+        borderRadius: '10em'
     }
 }));
 
-function App() {
-    const [theme, setTheme] = useState({
-        palette: {
-            type: "light"
-        }
-    });
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            theme: 'dark',
+            filterName: '',
+            rows: []
+        };
+        this.handleFilterNameChange = this.handleFilterNameChange.bind(this);
+        this.getData = this.getData.bind(this);
+        this.toggleDarkTheme = this.toggleDarkTheme.bind(this)
 
-    const [filterName, setFilterName] = useState({filterName: ''});
+    }
 
-    const toggleDarkTheme = () => {
-        let newPaletteType = theme.palette.type === "light" ? "dark" : "light";
-        setTheme({
-            palette: {
-                type: newPaletteType
-            }
-        });
+    componentWillMount() {
+        this.getData();
+    }
+
+    async getData() {
+        const response = await fetch(importedCsvData);
+        const reader = response.body.getReader();
+        const result = await reader.read(); // raw array
+        const decoder = new TextDecoder('utf-8');
+        const csv = decoder.decode(result.value);// the csv text
+        const results = Papa.parse(csv, {header: true}); // object with { data, errors, meta }
+        results.data.pop();
+        const rows = results.data;// array of objects
+        // console.log(rows);
+        this.setState({rows: rows});
+    }
+
+
+    toggleDarkTheme() {
+        let newPaletteType = this.state.theme === "light" ? "dark" : "light";
+        this.setState({theme: newPaletteType});
     };
 
-    const handleFilterNameChange = (e) => {
+    handleFilterNameChange = (e) => {
         console.log(e.target.value);
-        setFilterName({filterName: e.target.value});
+        this.setState({filterName: e.target.value});
     };
 
-    const muiTheme = createMuiTheme(theme);
-    const classes = useStyles();
+    render() {
+        const {classes} = this.props;
 
-    return (
-        <MuiThemeProvider theme={muiTheme}>
-            <CssBaseline/>
-
-            <Navbar theme={theme.palette.type} onToggleDark={toggleDarkTheme}/>
-
-            <Container className={classes.root}>
-                <Option handleFilterNameChange={handleFilterNameChange}/>
-                <Grid container spacing={2}
-                      justify='center'
-                      alignItems="center"
-                      direction="row"
-                >
-                    <Grid item xs={12} md={7} className={classes.table}>
-                        <DataTable filterName={filterName}/>
-                    </Grid>
+        let myComponent;
+        if (this.state.rows.length !== 0) {
+            console.log(this.state.rows);
+            myComponent = <Grid container spacing={2}
+                                justify='center'
+                                alignItems="center"
+                                direction="row"
+            >
+                <Grid item xs={12} md={7} className={classes.table}>
+                    <DataTable filterName={this.state.filterName} data={this.state.rows}/>
                 </Grid>
-            </Container>
-        </MuiThemeProvider>
-    );
+            </Grid>
+        } else {
+            myComponent = null
+        }
+        // myComponent = null
+
+        let theme = createMuiTheme({
+          palette: {
+            type: this.state.theme
+          }
+        });
+        return (
+            <MuiThemeProvider theme={theme}>
+
+                <CssBaseline/>
+
+                <Navbar theme={this.state.theme} onToggleDark={this.toggleDarkTheme}/>
+
+                <Container className={classes.root}>
+                    <Option handleFilterNameChange={this.handleFilterNameChange}/>
+                    {myComponent}
+                </Container>
+            </MuiThemeProvider>
+        );
+
+    }
+
 }
 
-export default App;
+export default withStyles(useStyles)(App);
 

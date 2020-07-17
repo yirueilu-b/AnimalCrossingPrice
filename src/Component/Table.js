@@ -42,22 +42,9 @@ const StyledTableRow = withStyles((theme) => ({
     },
 }))(TableRow);
 
-function createData(name, engName, price, location, time) {
-    return {name, engName, price, location, time};
-}
-
-const rows = [
-    createData('溪哥', 'pale chub', '200', '河川', '9:00~16:00'),
-    createData('珠星三塊魚', 'dace', '24000', '河川', '16:00~9:00'),
-    createData('金魚', 'goldfish', "1,300", '池塘', '全天'),
-    createData('塘鱧魚', 'freshwater goby', '400', '河川', '16:00~9:00'),
-    createData('鯰魚', 'catfish', '800', '池塘', '16:00~9:00'),
-];
-
-
 export default function CustomizedTables(props) {
     const classes = useStyles();
-    console.log(props.filterName);
+    console.log('props.data', props.data, props.filterName);
     return (
         <TableContainer className={classes.tablePaper} component={Paper}>
             <Table className={classes.table} aria-label="customized table">
@@ -77,14 +64,21 @@ export default function CustomizedTables(props) {
                 </TableHead>
 
                 <TableBody>
-                    {rows.map((row) => (
-                        <StyledTableRow key={row.name}>
-                            <StyledTableCell align="center">{row.name}</StyledTableCell>
-                            <StyledTableCell align="center">{row.price}</StyledTableCell>
-                            <StyledTableCell align="center">{row.location}</StyledTableCell>
-                            <StyledTableCell align="center">{row.time}</StyledTableCell>
-                        </StyledTableRow>
-                    ))}
+                    {
+                        props.data.map((row) => (row.name.indexOf(props.filterName) !== -1 ?
+                                <StyledTableRow key={row.name}>
+                                    <StyledTableCell align="center">{row.name}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.price}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.location}</StyledTableCell>
+                                    <StyledTableCell align="center">{row.time}</StyledTableCell>
+                                </StyledTableRow>
+                                :
+                                <StyledTableRow key={row.name}>
+                                    <></>
+                                </StyledTableRow>
+                            )
+                        )
+                    }
                 </TableBody>
 
             </Table>
