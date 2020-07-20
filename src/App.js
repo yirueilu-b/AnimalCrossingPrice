@@ -12,6 +12,7 @@ import fishData from './data/fish.csv';
 import insectData from './data/insect.csv';
 import Papa from 'papaparse';
 import {withStyles} from '@material-ui/styles';
+import StickyFooter from "./Component/Footer";
 
 
 const useStyles = makeStyles(theme => ({
@@ -37,7 +38,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            theme: 'dark',
+            theme: 'light',
             filterName: '',
             rows: [],
             currentRows: []
@@ -132,7 +133,7 @@ class App extends React.Component {
                     <Option handleFilterNameChange={this.handleFilterNameChange}/>
                     {myComponent}
                 </Container>
-
+                <StickyFooter/>
             </MuiThemeProvider>
         );
 
