@@ -39,7 +39,8 @@ class App extends React.Component {
         this.state = {
             theme: 'dark',
             filterName: '',
-            rows: []
+            rows: [],
+            currentRows: []
         };
         this.handleFilterNameChange = this.handleFilterNameChange.bind(this);
         this.getData = this.getData.bind(this);
@@ -70,6 +71,7 @@ class App extends React.Component {
         const rowsFish = resultsFish.data;// array of objects
         // console.log(rows);
         this.setState({rows: rowsFish.concat(rowsInsect)});
+        this.setState({currentRows: rowsFish.concat(rowsInsect)});
     }
 
 
@@ -78,9 +80,20 @@ class App extends React.Component {
         this.setState({theme: newPaletteType});
     };
 
+    handleRowsFilter(e){
+        let tmpRows = this.state.rows.filter(row => row.name.indexOf(e.target.value) !== -1);
+        if (tmpRows.length === 0) {
+            this.setState({currentRows: this.state.rows});
+        } else {
+            this.setState({currentRows: tmpRows});
+        }
+    };
+
     handleFilterNameChange = (e) => {
         // console.log(e.target.value);
         this.setState({filterName: e.target.value});
+        this.handleRowsFilter(e);
+        // let tmpRows = this.state.rows.map((row) => (row.name.indexOf(this.state.filterName) !== -1)? row:null);
     };
 
     render() {
@@ -95,7 +108,7 @@ class App extends React.Component {
                                 direction="row"
             >
                 <Grid item xs={12} md={7} className={classes.table}>
-                    <DataTable filterName={this.state.filterName} data={this.state.rows}/>
+                    <DataTable filterName={this.state.filterName} data={this.state.currentRows}/>
                 </Grid>
             </Grid>
         } else {
@@ -104,9 +117,9 @@ class App extends React.Component {
         // myComponent = null
 
         let theme = createMuiTheme({
-          palette: {
-            type: this.state.theme
-          }
+            palette: {
+                type: this.state.theme
+            }
         });
         return (
             <MuiThemeProvider theme={theme}>
