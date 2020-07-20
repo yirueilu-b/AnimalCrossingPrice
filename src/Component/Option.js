@@ -12,6 +12,26 @@ const useStyles = makeStyles((theme) => ({
         height: 96,
     },
     textField: {
+        // '& label.Mui-focused': {
+        //     color: 'white',
+        // },
+        '& .MuiInput-underline:after': {
+            borderBottomColor: theme.palette.info.light,
+        },
+        // '& .MuiOutlinedInput-root': {
+        //     '& fieldset': {
+        //         borderColor: 'white',
+        //     },
+        //     '&:hover fieldset': {
+        //         borderColor: 'white',
+        //     },
+        //     '&.Mui-focused fieldset': {
+        //         borderColor: theme.palette.info.light,
+        //     },
+        // },
+        "& .Mui-focused": {
+            color: theme.palette.info.light,
+        },
     },
 //style for font size
     resize: {
