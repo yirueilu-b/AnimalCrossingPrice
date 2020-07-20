@@ -50,6 +50,7 @@ const StyledTableRow = withStyles((theme) => ({
 }))(TableRow);
 const useToolbarStyles = makeStyles((theme) => ({
     root: {
+        backgroundImage: `url(${Image})`,
         paddingLeft: theme.spacing(2),
         paddingRight: theme.spacing(1),
     },
