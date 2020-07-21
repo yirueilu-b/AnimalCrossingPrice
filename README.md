@@ -6,6 +6,6 @@
 
 ## TODO:
 
-- Make table be able to be sorted by price
+- Filter
 
-- Location and time filter
+- More data

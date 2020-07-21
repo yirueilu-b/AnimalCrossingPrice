@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/AnimalCrossingPrice/static/css/main.a8c22d42.chunk.css",
-    "main.js": "/AnimalCrossingPrice/static/js/main.ba84ca45.chunk.js",
-    "main.js.map": "/AnimalCrossingPrice/static/js/main.ba84ca45.chunk.js.map",
+    "main.css": "/AnimalCrossingPrice/static/css/main.d8483c1d.chunk.css",
+    "main.js": "/AnimalCrossingPrice/static/js/main.90055f62.chunk.js",
+    "main.js.map": "/AnimalCrossingPrice/static/js/main.90055f62.chunk.js.map",
     "runtime-main.js": "/AnimalCrossingPrice/static/js/runtime-main.eb3cde15.js",
     "runtime-main.js.map": "/AnimalCrossingPrice/static/js/runtime-main.eb3cde15.js.map",
-    "static/js/2.90e4cd4d.chunk.js": "/AnimalCrossingPrice/static/js/2.90e4cd4d.chunk.js",
-    "static/js/2.90e4cd4d.chunk.js.map": "/AnimalCrossingPrice/static/js/2.90e4cd4d.chunk.js.map",
+    "static/js/2.d9c1fb8b.chunk.js": "/AnimalCrossingPrice/static/js/2.d9c1fb8b.chunk.js",
+    "static/js/2.d9c1fb8b.chunk.js.map": "/AnimalCrossingPrice/static/js/2.d9c1fb8b.chunk.js.map",
     "index.html": "/AnimalCrossingPrice/index.html",
-    "precache-manifest.f138870a0e687c26e3c95d5e2fb1c574.js": "/AnimalCrossingPrice/precache-manifest.f138870a0e687c26e3c95d5e2fb1c574.js",
+    "precache-manifest.55daed422e4412899a45f8887323c437.js": "/AnimalCrossingPrice/precache-manifest.55daed422e4412899a45f8887323c437.js",
     "service-worker.js": "/AnimalCrossingPrice/service-worker.js",
-    "static/css/main.a8c22d42.chunk.css.map": "/AnimalCrossingPrice/static/css/main.a8c22d42.chunk.css.map",
-    "static/js/2.90e4cd4d.chunk.js.LICENSE.txt": "/AnimalCrossingPrice/static/js/2.90e4cd4d.chunk.js.LICENSE.txt",
+    "static/css/main.d8483c1d.chunk.css.map": "/AnimalCrossingPrice/static/css/main.d8483c1d.chunk.css.map",
+    "static/js/2.d9c1fb8b.chunk.js.LICENSE.txt": "/AnimalCrossingPrice/static/js/2.d9c1fb8b.chunk.js.LICENSE.txt",
     "static/media/bg.png": "/AnimalCrossingPrice/static/media/bg.cea8d8de.png",
     "static/media/fish.csv": "/AnimalCrossingPrice/static/media/fish.77ac2ab3.csv",
-    "static/media/insect.csv": "/AnimalCrossingPrice/static/media/insect.2ae70597.csv"
+    "static/media/insect.csv": "/AnimalCrossingPrice/static/media/insect.2ae70597.csv",
+    "static/media/wave.svg": "/AnimalCrossingPrice/static/media/wave.6beca1fc.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.eb3cde15.js",
-    "static/js/2.90e4cd4d.chunk.js",
-    "static/css/main.a8c22d42.chunk.css",
-    "static/js/main.ba84ca45.chunk.js"
+    "static/js/2.d9c1fb8b.chunk.js",
+    "static/css/main.d8483c1d.chunk.css",
+    "static/js/main.90055f62.chunk.js"
   ]
 }
