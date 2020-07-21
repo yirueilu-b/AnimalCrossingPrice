@@ -1,5 +1,6 @@
 import React from 'react';
-import {withStyles, makeStyles, useTheme} from '@material-ui/core/styles';
+import {withStyles, useTheme} from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -26,22 +27,20 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-// import Slide from '@material-ui/core/Slide';
 import Grow from '@material-ui/core/Grow';
 
 
 const rowPerPage = 5;
 
 // Dialog
-
 const dialogStyles = makeStyles((theme) => ({
     confirmButton: {
-        color: theme.palette.success.dark,
-        borderColor: theme.palette.success.dark
+        color: theme.palette.success.light,
+        borderColor: theme.palette.success.light
     },
     cancelButton: {
-        color: theme.palette.error.dark,
-        borderColor: theme.palette.error.dark
+        color: theme.palette.error.main,
+        borderColor: theme.palette.error.main
     },
 }));
 
@@ -111,8 +110,9 @@ const StyledTableCell = withStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
         color: theme.palette.text.primary,
         backgroundImage: `url(${Image})`,
-        padding: theme.spacing(2),
-        fontSize: 14,
+        // padding: theme.spacing(2),
+        fontSize: 16,
+        // fontWeight: 'bold'
     },
     body: {
         fontSize: 14,
@@ -189,9 +189,9 @@ function EnhancedTableHead(props) {
 
     return (
         <TableHead>
-            <TableRow style={{height: 53}}>
+            <StyledTableRow style={{height: 53}}>
                 {headCells.map((headCell) => (
-                    <TableCell
+                    <StyledTableCell
                         key={headCell.id}
                         align='left'
                         padding={headCell.disablePadding ? 'none' : 'default'}
@@ -205,9 +205,9 @@ function EnhancedTableHead(props) {
                         >
                             {headCell.label}
                         </TableSortLabel>
-                    </TableCell>
+                    </StyledTableCell>
                 ))}
-            </TableRow>
+            </StyledTableRow>
         </TableHead>
     );
 }
