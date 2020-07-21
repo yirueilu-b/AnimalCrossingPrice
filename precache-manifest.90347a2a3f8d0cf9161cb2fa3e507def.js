@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "268f44acdc6c2084045d617078e89247",
+    "revision": "4b69a298f47077261b1ef02937ec1105",
     "url": "/AnimalCrossingPrice/index.html"
   },
   {
-    "revision": "9e8df110ef3f2819fff0",
+    "revision": "4dfc07a79c12f44bec9b",
     "url": "/AnimalCrossingPrice/static/css/main.d8483c1d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/AnimalCrossingPrice/static/js/2.d9c1fb8b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9e8df110ef3f2819fff0",
-    "url": "/AnimalCrossingPrice/static/js/main.90055f62.chunk.js"
+    "revision": "4dfc07a79c12f44bec9b",
+    "url": "/AnimalCrossingPrice/static/js/main.6117351f.chunk.js"
   },
   {
     "revision": "b9f63b258ace4eef06d1",
