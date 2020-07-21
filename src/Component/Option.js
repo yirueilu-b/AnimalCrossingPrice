@@ -8,7 +8,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        marginTop: theme.spacing(2),
+        marginTop: theme.spacing(0),
         height: 96,
     },
     textField: {
@@ -49,6 +49,7 @@ function Option(props) {
                   justify='center'
                   alignItems="center"
                   direction="row"
+                  id="back-to-top-anchor"
             >
                 <Grid item xs={10} md={8} container spacing={1}
                       justify='center'
@@ -71,7 +72,7 @@ function Option(props) {
                             className={classes.textField}
                             fullWidth id="input-with-icon-grid"
                             label="輸入名稱以查詢"
-                            autoFocus={true}
+                            // autoFocus={true}
                         />
                     </Grid>
                 </Grid>

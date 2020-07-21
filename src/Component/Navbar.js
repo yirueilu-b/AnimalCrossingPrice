@@ -12,10 +12,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import {makeStyles} from '@material-ui/core/styles';
+import Tooltip from '@material-ui/core/Tooltip';
+import wave from "./wave.svg";
 
 const Title = "動森魚類蟲類快速查價";
 
-const useStyles = makeStyles((theme) => ({
+const backToTopStyle = makeStyles((theme) => ({
     root: {
         position: 'fixed',
         bottom: theme.spacing(2),
@@ -25,16 +27,12 @@ const useStyles = makeStyles((theme) => ({
 
 function ScrollTop(props) {
     const {children, window} = props;
-    const classes = useStyles();
-// Note that you normally won't need to set the window ref as useScrollTrigger
-    // will default to window.
-    // This is only being set here because the demo is in an iframe.
+    const classes = backToTopStyle();
     const trigger = useScrollTrigger({
         target: window ? window() : undefined,
         disableHysteresis: true,
         threshold: 100,
     });
-
     const handleClick = (event) => {
         const anchor = (event.target.ownerDocument || document).querySelector('#back-to-top-anchor');
 
@@ -42,7 +40,6 @@ function ScrollTop(props) {
             anchor.scrollIntoView({behavior: 'smooth', block: 'center'});
         }
     };
-
     return (
         <Zoom in={trigger}>
             <div onClick={handleClick} role="presentation" className={classes.root}>
@@ -52,28 +49,39 @@ function ScrollTop(props) {
     );
 }
 
-// ScrollTop.propTypes = {
-//     children: PropTypes.element.isRequired,
-//     /**
-//      * Injected by the documentation to work in an iframe.
-//      * You won't need it on your project.
-//      */
-//     window: PropTypes.func,
-// };
+const appBarStyle = makeStyles((theme) => ({
+    root:{
+        backgroundImage: `url(${wave})`,
+    },
+    iconButton1: {
+        marginLeft: 'auto'
+    },
+    iconButton2: {
+        marginLeft: theme.spacing(0)
+    },
+}));
 
 function BackToTop(props) {
+    const classes = appBarStyle();
     return (
         <React.Fragment>
             <CssBaseline/>
-            <AppBar color="default">
+            <AppBar className={classes.root} color="default">
                 <Toolbar>
-                    <IconButton edge="start" color="default" aria-label="menu" onClick={props.onToggleDark}>
-                        {props.theme === "light" ? <Brightness7Icon/> : <Brightness4Icon/>}
-                    </IconButton>
                     <Typography variant="h6">{Title}</Typography>
+                    <Tooltip title="切換佈景主題">
+                        <IconButton className={classes.iconButton1} edge="end" color="default" aria-label="切換佈景主題" onClick={props.onToggleDark}>
+                            {props.theme.palette.type === "light" ? <Brightness7Icon/> : <Brightness4Icon/>}
+                        </IconButton>
+                    </Tooltip>
+                    {/*<Tooltip title="切換佈景主題">*/}
+                        {/*<IconButton className={classes.iconButton2} edge="end" color="default" aria-label="切換佈景主題" onClick={props.onToggleDark}>*/}
+                            {/*{props.theme === "light" ? <Brightness7Icon/> : <Brightness4Icon/>}*/}
+                        {/*</IconButton>*/}
+                    {/*</Tooltip>*/}
                 </Toolbar>
             </AppBar>
-            <Toolbar id="back-to-top-anchor"/>
+            <Toolbar/>
             <ScrollTop {...props}>
                 <Fab size="small">
                     <KeyboardArrowUpIcon/>

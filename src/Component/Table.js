@@ -20,9 +20,141 @@ import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+// import Slide from '@material-ui/core/Slide';
+import Grow from '@material-ui/core/Grow';
 
-const rowPerPage = 8;
 
+const rowPerPage = 5;
+
+// Dialog
+
+const dialogStyles = makeStyles((theme) => ({
+    confirmButton: {
+        color: theme.palette.success.dark,
+        borderColor: theme.palette.success.dark
+    },
+    cancelButton: {
+        color: theme.palette.error.dark,
+        borderColor: theme.palette.error.dark
+    },
+}));
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Grow in={ref} {...props} />
+});
+
+function AlertDialogSlide() {
+    const classes = dialogStyles();
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    return (
+        <div>
+            <Tooltip title="過濾器">
+                <IconButton aria-label="過濾器" onClick={handleClickOpen}>
+                    <FilterListIcon/>
+                </IconButton>
+            </Tooltip>
+            <Dialog
+                open={open}
+                TransitionComponent={Transition}
+                keepMounted
+                onClose={handleClose}
+                aria-labelledby="設定篩選條件"
+                aria-describedby="選取條件以篩選物產"
+            >
+                <DialogTitle id="alert-dialog-slide-title">{"設定篩選條件"}</DialogTitle>
+                <DialogContent>
+                    <DialogContentText id="alert-dialog-slide-description">
+
+                        施工中......
+
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button variant="outlined" className={classes.confirmButton} onClick={handleClose}>
+                        確定
+                    </Button>
+                    <Button variant="outlined" className={classes.cancelButton} onClick={handleClose}>
+                        取消
+                    </Button>
+                </DialogActions>
+            </Dialog>
+        </div>
+    );
+}
+
+// Columns
+const headCells = [
+    {id: 'name', numeric: false, disablePadding: true, label: '中文名稱'},
+    {id: 'price', numeric: true, disablePadding: true, label: '價格'},
+    {id: 'location', numeric: false, disablePadding: true, label: '出沒地點'},
+    {id: 'time', numeric: false, disablePadding: true, label: '出沒時間'},
+];
+
+// Table cell style
+const StyledTableCell = withStyles((theme) => ({
+    head: {
+        backgroundColor: theme.palette.background.paper,
+        color: theme.palette.text.primary,
+        backgroundImage: `url(${Image})`,
+        padding: theme.spacing(2),
+        fontSize: 14,
+    },
+    body: {
+        fontSize: 14,
+        padding: theme.spacing(2),
+        paddingLeft: 12,
+    },
+}))(TableCell);
+// Table row style
+const StyledTableRow = withStyles((theme) => ({
+    root: {
+        '&:nth-of-type(odd)': {
+            backgroundColor: theme.palette.action.hover,
+        },
+    },
+}))(TableRow);
+
+// Title
+const toolbarStyles = makeStyles((theme) => ({
+    root: {
+        backgroundImage: `url(${Image})`,
+        paddingLeft: theme.spacing(2),
+        paddingRight: theme.spacing(1),
+    },
+    title: {
+        paddingLeft: theme.spacing(6),
+        textAlign: 'center',
+        flex: '1 1 100%',
+    },
+}));
+const EnhancedTableToolbar = (props) => {
+    const classes = toolbarStyles();
+    return (
+        <Toolbar className={classes.root}>
+            <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
+                價目表
+            </Typography>
+            <AlertDialogSlide/>
+        </Toolbar>
+    );
+};
+
+// Header
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
         return -1;
@@ -49,13 +181,6 @@ function stableSort(array, comparator) {
     return stabilizedThis.map((el) => el[0]);
 }
 
-const headCells = [
-    {id: 'name', numeric: false, disablePadding: true, label: '中文名稱'},
-    {id: 'price', numeric: true, disablePadding: true, label: '價格'},
-    {id: 'location', numeric: false, disablePadding: true, label: '出沒地點'},
-    {id: 'time', numeric: false, disablePadding: true, label: '出沒時間'},
-];
-
 function EnhancedTableHead(props) {
     const {order, orderBy, onRequestSort} = props;
     const createSortHandler = (property) => (event) => {
@@ -64,7 +189,7 @@ function EnhancedTableHead(props) {
 
     return (
         <TableHead>
-            <TableRow>
+            <TableRow style={{height: 53}}>
                 {headCells.map((headCell) => (
                     <TableCell
                         key={headCell.id}
@@ -87,101 +212,33 @@ function EnhancedTableHead(props) {
     );
 }
 
-
-const useStyles = makeStyles((theme) => ({
-    table: {
-        // minWidth: 300,
-        // maxWidth: '100%',
-    },
-    tablePaper: {
-        marginTop: theme.spacing(2),
-        marginBottom: '15vh'
-    }
-}));
-
-const StyledTableCell = withStyles((theme) => ({
-    head: {
-        backgroundColor: theme.palette.background.paper,
-        color: theme.palette.text.primary,
-        backgroundImage: `url(${Image})`,
-        padding: theme.spacing(2),
-        fontSize: 14,
-    },
-    body: {
-        fontSize: 14,
-        padding: theme.spacing(2),
-        paddingLeft: 12,
-    },
-}))(TableCell);
-
-const StyledTableRow = withStyles((theme) => ({
-    root: {
-        '&:nth-of-type(odd)': {
-            backgroundColor: theme.palette.action.hover,
-        },
-    },
-}))(TableRow);
-
-const useToolbarStyles = makeStyles((theme) => ({
-    root: {
-        backgroundImage: `url(${Image})`,
-        paddingLeft: theme.spacing(2),
-        paddingRight: theme.spacing(1),
-    },
-    title: {
-        paddingLeft: theme.spacing(6),
-        textAlign: 'center',
-        flex: '1 1 100%',
-    },
-}));
-
-const EnhancedTableToolbar = (props) => {
-    const classes = useToolbarStyles();
-    return (
-        <Toolbar className={classes.root}>
-            <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
-                價目表
-            </Typography>
-            <Tooltip title="過濾器">
-                <IconButton aria-label="過濾器">
-                    <FilterListIcon/>
-                </IconButton>
-            </Tooltip>
-        </Toolbar>
-    );
-};
-
-const useStyles1 = makeStyles((theme) => ({
+// Pagination
+const paginationStyles = makeStyles((theme) => ({
     root: {
         flexShrink: 0,
-        marginLeft: theme.spacing(0),
+        marginRight: theme.spacing(1),
     },
     icon: {
-        padding: theme.spacing(1),
+        padding: 4,
     }
 }));
 
 function TablePaginationActions(props) {
-    const classes = useStyles1();
+    const classes = paginationStyles();
     const theme = useTheme();
     const {count, page, rowsPerPage, onChangePage} = props;
-
     const handleFirstPageButtonClick = (event) => {
         onChangePage(event, 0);
     };
-
     const handleBackButtonClick = (event) => {
         onChangePage(event, page - 1);
     };
-
     const handleNextButtonClick = (event) => {
         onChangePage(event, page + 1);
     };
-
     const handleLastPageButtonClick = (event) => {
         onChangePage(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
     };
-
     return (
         <div className={classes.root}>
             <IconButton
@@ -219,8 +276,20 @@ function TablePaginationActions(props) {
     );
 }
 
+// Table
+const tableStyles = makeStyles((theme) => ({
+    table: {
+        // minWidth: 300,
+        // maxWidth: '100%',
+    },
+    tablePaper: {
+        // marginTop: theme.spacing(2),
+        marginBottom: '8vh'
+    }
+}));
+
 export default function CustomizedTables(props) {
-    const classes = useStyles();
+    const classes = tableStyles();
     // console.log('props.data', props.data, props.filterName);
     const [page, setPage] = React.useState(0);
     const [order, setOrder] = React.useState('asc');
@@ -252,6 +321,7 @@ export default function CustomizedTables(props) {
                     <col style={{width: '25%'}}/>
                     <col style={{width: '25%'}}/>
                 </colgroup>
+
                 <EnhancedTableHead
                     order={order}
                     orderBy={orderBy}
@@ -274,26 +344,21 @@ export default function CustomizedTables(props) {
                             )
                     }
                     {emptyRows > 0 && (
-                    <TableRow style={{height: 53 * emptyRows}}>
-                    <TableCell colSpan={6}/>
-                    </TableRow>
+                        <TableRow style={{height: 53 * emptyRows}}>
+                            <TableCell colSpan={6}/>
+                        </TableRow>
                     )}
                 </TableBody>
 
             </Table>
             <TablePagination
-                labelDisplayedRows={({from, to, count}) => `${from}~${to}筆 / ${count}筆`}
+                labelDisplayedRows={({from, to, count}) => `${from}~${to} 筆 / 共 ${count} 筆`}
                 labelRowsPerPage={''}
                 rowsPerPageOptions={[rowPerPage]}
                 component="div"
-                // colSpan={3}
                 count={props.data.length}
                 rowsPerPage={rowPerPage}
                 page={page}
-                // SelectProps={{
-                //     inputProps: {'aria-label': 'rows per page'},
-                //     native: true,
-                // }}
                 onChangePage={handleChangePage}
                 ActionsComponent={TablePaginationActions}
             />

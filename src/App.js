@@ -7,38 +7,33 @@ import {MuiThemeProvider, createMuiTheme} from "@material-ui/core/styles";
 import Grid from '@material-ui/core/Grid';
 import Option from './Component/Option'
 import DataTable from './Component/Table'
-import {makeStyles} from '@material-ui/core/styles';
 import fishData from './data/fish.csv';
 import insectData from './data/insect.csv';
 import Papa from 'papaparse';
-import {withStyles} from '@material-ui/styles';
+import {withStyles} from '@material-ui/core/styles';
 import StickyFooter from "./Component/Footer";
 
+let myTheme = createMuiTheme({
+    palette: {
+        type: 'light'
+    }
+});
 
-const useStyles = makeStyles(theme => ({
+const useStyles = myTheme => ({
     root: {
         flexGrow: 1,
         maxWidth: '100vw',
-        height: '100%',
-        marginTop: theme.spacing(2),
+        minHeight: 'calc(100vh - 92px)',
         textAlign: 'center',
     },
-    paper: {
-        height: '100%',
-        padding: theme.spacing(2),
-        textAlign: 'center',
-    },
-    table: {
-        width: '100vw',
-        borderRadius: '10em'
-    }
-}));
+});
+
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            theme: 'light',
+            theme: myTheme,
             filterName: '',
             rows: [],
             currentRows: []
@@ -49,7 +44,7 @@ class App extends React.Component {
 
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.getData();
     }
 
@@ -82,8 +77,14 @@ class App extends React.Component {
 
 
     toggleDarkTheme() {
-        let newPaletteType = this.state.theme === "light" ? "dark" : "light";
-        this.setState({theme: newPaletteType});
+        let newPaletteType = this.state.theme.palette.type === "light" ? "dark" : "light";
+        myTheme = createMuiTheme({
+            palette: {
+                type: newPaletteType
+            }
+        });
+        this.setState({theme: myTheme});
+
     };
 
     handleRowsFilter(e) {
@@ -104,7 +105,6 @@ class App extends React.Component {
 
     render() {
         const {classes} = this.props;
-
         let myComponent;
         if (this.state.rows.length !== 0) {
             // console.log(this.state.rows);
@@ -121,21 +121,15 @@ class App extends React.Component {
         } else {
             myComponent = null
         }
-        // myComponent = null
 
-        let theme = createMuiTheme({
-            palette: {
-                type: this.state.theme
-            }
-        });
         return (
-            <MuiThemeProvider theme={theme}>
+            <MuiThemeProvider theme={myTheme}>
 
                 <CssBaseline/>
 
-                <Navbar theme={this.state.theme} onToggleDark={this.toggleDarkTheme}/>
-
                 <Container className={classes.root}>
+                    <Navbar theme={this.state.theme} onToggleDark={this.toggleDarkTheme}/>
+
                     <Option handleFilterNameChange={this.handleFilterNameChange}/>
                     {myComponent}
                 </Container>
