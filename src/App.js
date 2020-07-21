@@ -71,8 +71,13 @@ class App extends React.Component {
         resultsFish.data.pop();
         const rowsFish = resultsFish.data;// array of objects
         // console.log(rows);
-        this.setState({rows: rowsFish.concat(rowsInsect)});
-        this.setState({currentRows: rowsFish.concat(rowsInsect)});
+
+        let allData = rowsFish.concat(rowsInsect);
+        Object.keys(allData).forEach(function (el) {
+            allData[el].price = parseInt(allData[el].price.replace(',', ''))
+        });
+        this.setState({rows: allData});
+        this.setState({currentRows: allData});
     }
 
 
@@ -81,7 +86,7 @@ class App extends React.Component {
         this.setState({theme: newPaletteType});
     };
 
-    handleRowsFilter(e){
+    handleRowsFilter(e) {
         let tmpRows = this.state.rows.filter(row => row.name.indexOf(e.target.value) !== -1);
         if (tmpRows.length === 0) {
             this.setState({currentRows: this.state.rows});
@@ -103,15 +108,16 @@ class App extends React.Component {
         let myComponent;
         if (this.state.rows.length !== 0) {
             // console.log(this.state.rows);
-            myComponent = <Grid container spacing={2}
-                                justify='center'
-                                alignItems="center"
-                                direction="row"
-            >
-                <Grid item xs={12} md={7} className={classes.table}>
-                    <DataTable filterName={this.state.filterName} data={this.state.currentRows}/>
+            myComponent =
+                <Grid container spacing={2}
+                      justify='center'
+                      alignItems="center"
+                      direction="row"
+                >
+                    <Grid item xs={12} md={7} className={classes.table}>
+                        <DataTable filterName={this.state.filterName} data={this.state.currentRows}/>
+                    </Grid>
                 </Grid>
-            </Grid>
         } else {
             myComponent = null
         }
