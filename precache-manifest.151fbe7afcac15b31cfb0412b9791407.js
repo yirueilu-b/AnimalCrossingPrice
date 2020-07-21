@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4b69a298f47077261b1ef02937ec1105",
+    "revision": "846da530da5865f85cb69643b6c7c2a3",
     "url": "/AnimalCrossingPrice/index.html"
   },
   {
-    "revision": "4dfc07a79c12f44bec9b",
+    "revision": "f6743b0ef8a66edefc2d",
     "url": "/AnimalCrossingPrice/static/css/main.d8483c1d.chunk.css"
   },
   {
-    "revision": "a12523f34e4781a1dd7d",
-    "url": "/AnimalCrossingPrice/static/js/2.d9c1fb8b.chunk.js"
+    "revision": "752cb9e05cc7f9d30e09",
+    "url": "/AnimalCrossingPrice/static/js/2.fcfbd4cf.chunk.js"
   },
   {
     "revision": "42482405b3887c188d15887943efa5a5",
-    "url": "/AnimalCrossingPrice/static/js/2.d9c1fb8b.chunk.js.LICENSE.txt"
+    "url": "/AnimalCrossingPrice/static/js/2.fcfbd4cf.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4dfc07a79c12f44bec9b",
-    "url": "/AnimalCrossingPrice/static/js/main.6117351f.chunk.js"
+    "revision": "f6743b0ef8a66edefc2d",
+    "url": "/AnimalCrossingPrice/static/js/main.9197218e.chunk.js"
   },
   {
     "revision": "b9f63b258ace4eef06d1",
