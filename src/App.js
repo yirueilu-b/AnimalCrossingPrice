@@ -23,7 +23,7 @@ const useStyles = myTheme => ({
     root: {
         flexGrow: 1,
         maxWidth: '100vw',
-        minHeight: 'calc(100vh - 92px)',
+        minHeight: 'calc(100vh - 68px)',
         textAlign: 'center',
     },
 });

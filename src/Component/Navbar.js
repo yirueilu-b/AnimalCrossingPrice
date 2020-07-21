@@ -51,7 +51,6 @@ function ScrollTop(props) {
 
 const appBarStyle = makeStyles((theme) => ({
     root:{
-        backgroundImage: `url(${wave})`,
     },
     iconButton1: {
         marginLeft: 'auto'

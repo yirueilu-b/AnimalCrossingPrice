@@ -8,7 +8,7 @@ import wave from './wave.svg';
 
 function Copyright() {
     return (
-        <Typography variant="body2" color="textSecondary">
+        <Typography variant="body2">
             {'Copyright © '}
             <Link color="inherit" href="https://material-ui.com/">
                 YirueiLu
@@ -23,17 +23,16 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         flexDirection: 'column',
-        // minHeight: '30vh',
-        // position:'relative',
         marginTop: 'auto',
-        // width: '100%',
         bottom: 0,
     },
 
     footer: {
-        padding: theme.spacing(3, 2),
-        // marginTop: 'auto',
-        backgroundColor: theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
+        padding: theme.spacing(0,2,3, 2),
+        // backgroundColor: theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
+        backgroundImage: `url(${wave})`,
+        backgroundPosition: 'center bottom',
+        color:theme.palette.text.hint,
     },
 }));
 
