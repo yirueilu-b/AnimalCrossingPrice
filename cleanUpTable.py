@@ -14,5 +14,5 @@ def clean_up_data(file_name, current_month):
 
 if __name__ == '__main__':
     print("Creating cleaned table data...")
-    clean_up_data("fish.csv", 7)
-    clean_up_data("insect.csv", 7)
+    clean_up_data("fish.csv", 8)
+    clean_up_data("insect.csv", 8)

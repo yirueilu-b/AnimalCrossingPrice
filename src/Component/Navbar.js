@@ -1,4 +1,5 @@
 import React from 'react';
+import {makeStyles} from '@material-ui/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -10,7 +11,6 @@ import Zoom from '@material-ui/core/Zoom';
 import IconButton from '@material-ui/core/IconButton';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
-import {makeStyles} from '@material-ui/styles';
 import Tooltip from '@material-ui/core/Tooltip';
 
 const Title = "動森魚類蟲類快速查價";

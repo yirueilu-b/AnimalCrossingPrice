@@ -1,100 +1,28 @@
 import React from 'react';
 import {withStyles, useTheme} from '@material-ui/core/styles';
+import {useEffect} from 'react'
 import {makeStyles} from '@material-ui/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Image from './bg.png';
 import Paper from "@material-ui/core/Paper/Paper";
 import TableContainer from '@material-ui/core/TableContainer';
 import TablePagination from '@material-ui/core/TablePagination';
-import {useEffect} from 'react'
-import Tooltip from '@material-ui/core/Tooltip';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import FilterListIcon from '@material-ui/icons/FilterList';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Grow from '@material-ui/core/Grow';
+import Image from './bg.png';
+import AlertDialogSlide from "./Filter";
 
 
-const rowPerPage = 5;
-
-// Dialog
-const dialogStyles = makeStyles((theme) => ({
-    confirmButton: {
-        color: theme.palette.success.light,
-        borderColor: theme.palette.success.light
-    },
-    cancelButton: {
-        color: theme.palette.error.main,
-        borderColor: theme.palette.error.main
-    },
-}));
-
-const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Grow in={ref} {...props} />
-});
-
-function AlertDialogSlide() {
-    const classes = dialogStyles();
-    const [open, setOpen] = React.useState(false);
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-
-    return (
-        <div>
-            <Tooltip title="過濾器">
-                <IconButton aria-label="過濾器" onClick={handleClickOpen}>
-                    <FilterListIcon/>
-                </IconButton>
-            </Tooltip>
-            <Dialog
-                open={open}
-                TransitionComponent={Transition}
-                keepMounted
-                onClose={handleClose}
-                aria-labelledby="設定篩選條件"
-                aria-describedby="選取條件以篩選物產"
-            >
-                <DialogTitle id="alert-dialog-slide-title">{"設定篩選條件"}</DialogTitle>
-                <DialogContent>
-                    <DialogContentText id="alert-dialog-slide-description">
-
-                        施工中......
-
-                    </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                    <Button variant="outlined" className={classes.confirmButton} onClick={handleClose}>
-                        確定
-                    </Button>
-                    <Button variant="outlined" className={classes.cancelButton} onClick={handleClose}>
-                        取消
-                    </Button>
-                </DialogActions>
-            </Dialog>
-        </div>
-    );
-}
+const rowPerPage = 8;
 
 // Columns
 const headCells = [
