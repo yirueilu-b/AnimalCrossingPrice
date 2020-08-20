@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/AnimalCrossingPrice/static/css/main.d8483c1d.chunk.css",
-    "main.js": "/AnimalCrossingPrice/static/js/main.9197218e.chunk.js",
-    "main.js.map": "/AnimalCrossingPrice/static/js/main.9197218e.chunk.js.map",
+    "main.js": "/AnimalCrossingPrice/static/js/main.e0df4182.chunk.js",
+    "main.js.map": "/AnimalCrossingPrice/static/js/main.e0df4182.chunk.js.map",
     "runtime-main.js": "/AnimalCrossingPrice/static/js/runtime-main.eb3cde15.js",
     "runtime-main.js.map": "/AnimalCrossingPrice/static/js/runtime-main.eb3cde15.js.map",
-    "static/js/2.fcfbd4cf.chunk.js": "/AnimalCrossingPrice/static/js/2.fcfbd4cf.chunk.js",
-    "static/js/2.fcfbd4cf.chunk.js.map": "/AnimalCrossingPrice/static/js/2.fcfbd4cf.chunk.js.map",
+    "static/js/2.250fa850.chunk.js": "/AnimalCrossingPrice/static/js/2.250fa850.chunk.js",
+    "static/js/2.250fa850.chunk.js.map": "/AnimalCrossingPrice/static/js/2.250fa850.chunk.js.map",
     "index.html": "/AnimalCrossingPrice/index.html",
-    "precache-manifest.151fbe7afcac15b31cfb0412b9791407.js": "/AnimalCrossingPrice/precache-manifest.151fbe7afcac15b31cfb0412b9791407.js",
+    "precache-manifest.6d0208761fed2109408dcac1c702b3f9.js": "/AnimalCrossingPrice/precache-manifest.6d0208761fed2109408dcac1c702b3f9.js",
     "service-worker.js": "/AnimalCrossingPrice/service-worker.js",
     "static/css/main.d8483c1d.chunk.css.map": "/AnimalCrossingPrice/static/css/main.d8483c1d.chunk.css.map",
-    "static/js/2.fcfbd4cf.chunk.js.LICENSE.txt": "/AnimalCrossingPrice/static/js/2.fcfbd4cf.chunk.js.LICENSE.txt",
+    "static/js/2.250fa850.chunk.js.LICENSE.txt": "/AnimalCrossingPrice/static/js/2.250fa850.chunk.js.LICENSE.txt",
     "static/media/bg.png": "/AnimalCrossingPrice/static/media/bg.cea8d8de.png",
-    "static/media/fish.csv": "/AnimalCrossingPrice/static/media/fish.77ac2ab3.csv",
-    "static/media/insect.csv": "/AnimalCrossingPrice/static/media/insect.2ae70597.csv",
+    "static/media/fish.csv": "/AnimalCrossingPrice/static/media/fish.83a2c23b.csv",
+    "static/media/insect.csv": "/AnimalCrossingPrice/static/media/insect.ca3a559e.csv",
     "static/media/wave.svg": "/AnimalCrossingPrice/static/media/wave.6beca1fc.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.eb3cde15.js",
-    "static/js/2.fcfbd4cf.chunk.js",
+    "static/js/2.250fa850.chunk.js",
     "static/css/main.d8483c1d.chunk.css",
-    "static/js/main.9197218e.chunk.js"
+    "static/js/main.e0df4182.chunk.js"
   ]
 }
